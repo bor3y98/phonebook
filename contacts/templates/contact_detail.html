@@ -1,103 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Details</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>Contact Details</title>
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .contact-details {
-            margin-bottom: 20px;
-        }
-
-        .contact-details label {
-            font-weight: bold;
-        }
-
-        .contact-details p {
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-
-        .phone-number {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .phone-number p {
-            flex: 1;
-            margin: 0;
-        }
-
-        .edit-button {
-            background-color: #0074d9;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            padding: 10px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .edit-button:hover {
-            background-color: #0056b3;
-        }
-
-        .delete-button {
-            background-color: #ff4136;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            padding: 10px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .delete-button:hover {
-            background-color: #e60000;
-        }
-    </style>
+  <link rel="stylesheet"
+        type="text/css"
+        href="{% static 'css/contact_detail.css' %}">
 </head>
 <body>
-    <div class="container">
-        <h1>Contact Details</h1>
-        <div class="contact-details">
-            <label>Name:</label>
-            <p>{{ contact.name }}</p>
+  <div class="container">
+    <h1>Contact Details</h1>
+    <div class="contact-details">
+      <label>Name:</label>
+      <p>{{ contact.name }}</p>
 
-            <label>Email:</label>
-            <p>{{ contact.email }}</p>
+      <label>Email:</label>
+      <p>{{ contact.email }}</p>
 
-            <label>Address:</label>
-            <p>{{ contact.address }}</p>
-        </div>
-
-        <h2>Phone Numbers:</h2>
-        {% for phone in contact.contact_phone.all %}
-            <div class="phone-number">
-                <p>{{ phone.phone }}</p>
-            </div>
-        {% endfor %}
+      <label>Address:</label>
+      <p>{{ contact.address }}</p>
     </div>
+
+    <h2>Phone Numbers:</h2>
+    {% for phone in contact.contact_phone.all %}
+      <div class="phone-number">
+        <p>{{ phone.phone }}</p>
+      </div>
+    {% endfor %}
+  </div>
 </body>
 </html>

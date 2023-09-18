@@ -1,6 +1,5 @@
 FROM python:3.11.0-alpine
 
-ENV SECRET_KEY='9xdnakz--ip!3d(qzwpcq$#62r5!c47#f*ti9^=dc^x40)#\$ww'
 
 WORKDIR /app
 
