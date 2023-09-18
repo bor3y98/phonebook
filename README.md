@@ -1,14 +1,16 @@
 ```mermaid
-erDiagram
-  Contact ||--o{ ContactPhone : Belongs_to
-  Contact {
+classDiagram
+  class Contact {
     + id (PK)
-    name
-    email
-    address
+    + name
+    + email
+    + address
   }
-  ContactPhone {
+
+  class ContactPhone {
     + id (PK)
-    phone
+    + phone
   }
+
+  Contact "1" -- "0..*" ContactPhone : Has
 ```
