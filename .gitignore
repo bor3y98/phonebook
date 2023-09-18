@@ -89,3 +89,6 @@ local_settings.py
 db.sqlite3
 
 .idea
+db_backup
+db_backup/
+static
